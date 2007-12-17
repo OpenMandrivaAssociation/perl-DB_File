@@ -14,7 +14,6 @@ Patch:		%{module}-1.805-makefile.patch
 Url:		http://search.cpan.org/dist/%{module}/
 BuildRequires:	perl-devel
 BuildRequires:	db-devel
-BuildRoot:	%{_tmppath}/%{name}-%{version}
 
 %description
 DB_File is a module which allows Perl programs to make use of the
