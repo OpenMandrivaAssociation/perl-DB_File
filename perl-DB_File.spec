@@ -1,7 +1,7 @@
 %define module	DB_File
 %define name	perl-%{module}
-%define version	1.816
-%define release	%mkrel 3
+%define version	1.817
+%define release	%mkrel 1
 
 Name:		perl-%{module}
 Version:	%{version}
