@@ -1,20 +1,21 @@
-%define module	DB_File
-%define name	perl-%{module}
-%define version	1.820
-%define release	%mkrel 2
+%define upstream_name	 DB_File
+%define upstream_version 1.820
 
-Name:		perl-%{module}
-Version:	%{version}
-Release:	%{release}
+Name:       perl-%{upstream_name}
+Version:    %perl_convert_version %{upstream_version}
+Release:    %mkrel 3
+
 Summary:	Perl5 access to Berkeley DB version 1.x
-License:	GPL or Artistic
+License:	GPL+ or Artistic
 Group:		Development/Perl
-Source0:	http://search.cpan.org/CPAN/authors/id/P/PM/PMQS/%{module}-%{version}.tar.bz2
-Patch:		%{module}-1.805-makefile.patch
-Url:		http://search.cpan.org/dist/%{module}/
-BuildRequires:	perl-devel
+Url:		http://search.cpan.org/dist/%{upstream_name}/
+Source0:	http://search.cpan.org/CPAN/authors/id/P/PM/PMQS/%{upstream_name}-%{upstream_version}.tar.bz2
+Patch0:		%{upstream_name}-1.805-makefile.patch
+
 BuildRequires:	db-devel
-BuildRoot:	%{_tmppath}/%{name}-%{version}
+BuildRequires:	perl-devel
+
+BuildRoot:	%{_tmppath}/%{name}-%{version}-%{release}
 
 %description
 DB_File is a module which allows Perl programs to make use of the
@@ -34,8 +35,8 @@ For further details see the documentation included at the end of the
 file DB_File.pm.
 
 %prep
-%setup -q -n %{module}-%{version}
-%patch -p1
+%setup -q -n %{upstream_name}-%{upstream_version}
+%patch0 -p1
 chmod 644 README DB_File.pm
 
 %build
@@ -43,7 +44,7 @@ chmod 644 README DB_File.pm
 %make
 
 %check
-%{__make} test
+%make test
 
 %clean 
 rm -rf %{buildroot}
@@ -58,5 +59,3 @@ rm -rf %{buildroot}
 %{perl_vendorarch}/*.pm
 %{perl_vendorarch}/auto/DB_File
 %_mandir/man3*/DB_File.*
-
-
