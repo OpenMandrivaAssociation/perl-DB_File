@@ -3,7 +3,7 @@
 
 Name:       perl-%{upstream_name}
 Version:    %perl_convert_version %{upstream_version}
-Release:    %mkrel 5
+Release:    %mkrel 6
 
 Summary:	Perl5 access to Berkeley DB version 1.x
 License:	GPL+ or Artistic
@@ -53,9 +53,10 @@ rm -rf %{buildroot}
 rm -rf %{buildroot}
 %makeinstall_std
 
+rm %{buildroot}%{_mandir}/man3/DB_File.3pm
+
 %files
 %defattr(-,root,root)
 %doc README Changes
 %{perl_vendorarch}/*.pm
 %{perl_vendorarch}/auto/DB_File
-%_mandir/man3*/DB_File.*
