@@ -1,9 +1,9 @@
 %define upstream_name	 DB_File
 %define upstream_version 1.820
 
-Name:       perl-%{upstream_name}
-Version:    %perl_convert_version %{upstream_version}
-Release:    %mkrel 6
+Name:		perl-%{upstream_name}
+Version:	%perl_convert_version %{upstream_version}
+Release		7
 
 Summary:	Perl5 access to Berkeley DB version 1.x
 License:	GPL+ or Artistic
@@ -14,8 +14,6 @@ Patch0:		%{upstream_name}-1.805-makefile.patch
 
 BuildRequires:	db-devel
 BuildRequires:	perl-devel
-
-BuildRoot:	%{_tmppath}/%{name}-%{version}-%{release}
 
 %description
 DB_File is a module which allows Perl programs to make use of the
@@ -46,17 +44,12 @@ chmod 644 README DB_File.pm
 %check
 %make test
 
-%clean 
-rm -rf %{buildroot}
-
 %install
-rm -rf %{buildroot}
 %makeinstall_std
 
 rm %{buildroot}%{_mandir}/man3/DB_File.3pm
 
 %files
-%defattr(-,root,root)
 %doc README Changes
 %{perl_vendorarch}/*.pm
 %{perl_vendorarch}/auto/DB_File
