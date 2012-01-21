@@ -3,7 +3,7 @@
 
 Name:		perl-%{upstream_name}
 Version:	%perl_convert_version %{upstream_version}
-Release:	8
+Release:	9
 
 Summary:	Perl5 access to Berkeley DB version 1.x
 License:	GPL+ or Artistic
