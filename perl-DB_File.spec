@@ -1,15 +1,15 @@
 %define upstream_name	 DB_File
-%define upstream_version 1.820
+%define upstream_version 1.826
 
 Name:		perl-%{upstream_name}
 Version:	%perl_convert_version %{upstream_version}
-Release:	10
+Release:	1
 
 Summary:	Perl5 access to Berkeley DB version 1.x
 License:	GPL+ or Artistic
 Group:		Development/Perl
 Url:		http://search.cpan.org/dist/%{upstream_name}/
-Source0:	http://search.cpan.org/CPAN/authors/id/P/PM/PMQS/%{upstream_name}-%{upstream_version}.tar.bz2
+Source0:	http://search.cpan.org/CPAN/authors/id/P/PM/PMQS/%{upstream_name}-%{upstream_version}.tar.gz
 Patch0:		%{upstream_name}-1.805-makefile.patch
 
 BuildRequires:	db-devel
