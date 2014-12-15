@@ -1,9 +1,9 @@
 %define upstream_name	 DB_File
-%define upstream_version 1.831
+%define upstream_version 1.834
 
 Name:		perl-%{upstream_name}
 Version:	%perl_convert_version %{upstream_version}
-Release:	6
+Release:	1
 
 Summary:	Perl5 access to Berkeley DB version 1.x
 
@@ -39,7 +39,7 @@ file DB_File.pm.
 chmod 644 README DB_File.pm
 
 %build
-%{__perl} Makefile.PL INSTALLDIRS=vendor
+perl Makefile.PL INSTALLDIRS=vendor
 %make
 
 %check
@@ -54,6 +54,3 @@ rm %{buildroot}%{_mandir}/man3/DB_File.3pm
 %doc README Changes
 %{perl_vendorarch}/*.pm
 %{perl_vendorarch}/auto/DB_File
-
-
-
