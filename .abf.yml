@@ -1,5 +1,6 @@
 removed_sources:
   DB_File-1.826.tar.gz: 02fc9939728f39ddbbe6b88c2d879ecb9255d244
   DB_File-1.831.tar.gz: 1029cf2d1f682564d979009d3f8df352727b132e
-sources:
   DB_File-1.834.tar.gz: f20b8da7bf6f61a546073c2ad1fbe3cf6e697088
+sources:
+  DB_File-1.835.tar.gz: 010a43985eda29197803edded1e8e8edc5828a07
