@@ -1,9 +1,9 @@
 %define upstream_name	 DB_File
-%define upstream_version 1.834
+%define upstream_version 1.843
 
 Name:		perl-%{upstream_name}
 Version:	%perl_convert_version %{upstream_version}
-Release:	2
+Release:	1
 
 Summary:	Perl5 access to Berkeley DB version 1.x
 
@@ -13,7 +13,7 @@ Url:		http://search.cpan.org/dist/%{upstream_name}/
 Source0:	http://search.cpan.org/CPAN/authors/id/P/PM/PMQS/%{upstream_name}-%{upstream_version}.tar.gz
 Patch0:		%{upstream_name}-1.831-makefile.patch
 
-BuildRequires:	db-devel
+BuildRequires:	db-devel >= 18
 BuildRequires:	perl-devel
 
 %description
@@ -48,7 +48,7 @@ perl Makefile.PL INSTALLDIRS=vendor
 %install
 %makeinstall_std
 
-rm %{buildroot}%{_mandir}/man3/DB_File.3pm
+rm -f %{buildroot}%{_mandir}/man3/DB_File.3pm
 
 %files
 %doc README Changes
